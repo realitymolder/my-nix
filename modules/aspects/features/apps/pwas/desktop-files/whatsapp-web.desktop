@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=WhatsApp Web
+Comment=Launch WhatsApp Web
+Icon=/home/daniel/.local/share/icons/hicolor/48x48/apps/whatsapp.png
+Exec=chromium --app="https://web.whatsapp.com/" %U
+Terminal=false
