@@ -1,14 +1,6 @@
+{ den, ... }:
 {
-  config,
-  den,
-  lib,
-  ...
-}:
-let
-  cfg = config.den.desktop.niri;
-in
-{
-  den.provides.niri-mimes.homeManager = lib.mkIf cfg.enable (
+  den.provides.niri-mimes.homeManager =
     { pkgs, ... }:
     {
       xdg.portal = {
@@ -50,6 +42,5 @@ in
           "x-scheme-handler/anytype" = [ "anytype.desktop" ];
         };
       };
-    }
-  );
+    };
 }

@@ -1,19 +1,10 @@
+{ den, ... }:
 {
-  config,
-  den,
-  lib,
-  ...
-}:
-let
-  layoutConfig = "us,il";
-  cfg = config.den.desktop.niri;
-in
-{
-  den.provides.niri-input.homeManager = lib.mkIf cfg.enable {
+  den.provides.niri-input.homeManager = {
     programs.niri.settings.input = {
       keyboard = {
         xkb = {
-          layout = layoutConfig;
+          layout = "us,il";
           options = "grp:alt_space_toggle";
         };
         repeat-delay = 600;

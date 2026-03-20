@@ -1,14 +1,6 @@
+{ den, ... }:
 {
-  config,
-  den,
-  lib,
-  ...
-}:
-let
-  cfg = config.den.desktop.niri;
-in
-{
-  den.provides.niri-workspaces.homeManager = lib.mkIf cfg.enable {
+  den.provides.niri-workspaces.homeManager = {
     programs.niri.settings = {
       workspaces = {
         "browse" = { };

@@ -1,14 +1,6 @@
+{ den, ... }:
 {
-  config,
-  den,
-  lib,
-  ...
-}:
-let
-  cfg = config.den.desktop.niri;
-in
-{
-  den.provides.niri-settings.homeManager = lib.mkIf cfg.enable {
+  den.provides.niri-settings.homeManager = {
     programs.niri.settings = {
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
       prefer-no-csd = true;

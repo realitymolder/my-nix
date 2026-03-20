@@ -1,14 +1,6 @@
+{ den, ... }:
 {
-  config,
-  den,
-  lib,
-  ...
-}:
-let
-  cfg = config.den.desktop.niri;
-in
-{
-  den.provides.niri-packages.homeManager = lib.mkIf cfg.enable (
+  den.provides.niri-packages.homeManager =
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
@@ -29,6 +21,5 @@ in
         jq
         nautilus
       ];
-    }
-  );
+    };
 }

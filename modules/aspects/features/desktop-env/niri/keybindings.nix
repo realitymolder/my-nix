@@ -1,9 +1,4 @@
-{
-  config,
-  den,
-  lib,
-  ...
-}:
+{ den, ... }:
 let
   dms = args: {
     action.spawn = [
@@ -14,10 +9,9 @@ let
     ++ args;
   };
   sh = cmd: { action.spawn-sh = cmd; };
-  cfg = config.den.desktop.niri;
 in
 {
-  den.provides.niri-keybindings.homeManager = lib.mkIf cfg.enable {
+  den.provides.niri-keybindings.homeManager = {
     programs.niri.settings.binds = {
       "Ctrl+Alt+A" = dms [
         "dash"

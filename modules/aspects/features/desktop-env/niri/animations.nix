@@ -1,9 +1,4 @@
-{
-  config,
-  den,
-  lib,
-  ...
-}:
+{ den, lib, ... }:
 let
   standardBezier = {
     curve = "cubic-bezier";
@@ -15,10 +10,9 @@ let
       1.0
     ];
   };
-  cfg = config.den.desktop.niri;
 in
 {
-  den.provides.niri-animations.homeManager = lib.mkIf cfg.enable {
+  den.provides.niri-animations.homeManager = {
     programs.niri.settings.animations = {
       slowdown = 1.0;
 

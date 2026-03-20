@@ -1,14 +1,6 @@
+{ den, ... }:
 {
-  config,
-  den,
-  lib,
-  ...
-}:
-let
-  cfg = config.den.desktop.niri;
-in
-{
-  den.provides.niri-environment.nixos = lib.mkIf cfg.enable {
+  den.provides.niri-environment.nixos = {
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
       XCURSOR_SIZE = "24";

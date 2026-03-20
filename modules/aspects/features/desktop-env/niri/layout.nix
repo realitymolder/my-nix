@@ -1,14 +1,6 @@
+{ den, ... }:
 {
-  config,
-  den,
-  lib,
-  ...
-}:
-let
-  cfg = config.den.desktop.niri;
-in
-{
-  den.provides.niri-layout.homeManager = lib.mkIf cfg.enable {
+  den.provides.niri-layout.homeManager = {
     programs.niri.settings.layout = {
       shadow = {
         enable = true;
