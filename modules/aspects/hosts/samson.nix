@@ -2,7 +2,11 @@
 {
   den.aspects.samson = {
     includes = [
-      den.provides.developer
+      den.provides.dev
+      den.provides.system
+      den.provides.gaming
+      den.provides.shell
+      den.provides.desktop-env
     ];
 
     nixos =
