@@ -3,7 +3,8 @@
   # user aspect
   den.aspects.daniel = {
     includes = [
-        den.provides.unfree
+      den.provides.unfree
+      den.provides.define-user
       den.provides.primary-user
       (den.provides.user-shell "fish")
     ];

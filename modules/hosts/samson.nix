@@ -1,5 +1,7 @@
 { den, ... }:
 {
+  den.hosts.x86_64-linux.samson.users.daniel = { };
+
   den.aspects.samson = {
     includes = [
       den.provides.dev
