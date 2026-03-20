@@ -1,10 +1,9 @@
+{ den, inputs, ... }:
 {
-  config,
-  den,
-  lib,
-  ...
-}:
-{
+  flake-file.inputs.dank-material-shell = {
+    url = "github:AvengeMedia/DankMaterialShell";
+  };
+
   den.provides.dms.homeManager =
     { pkgs, ... }:
     {
