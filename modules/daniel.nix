@@ -1,8 +1,9 @@
 { den, ... }:
 {
   # user aspect
-  den.aspects.tux = {
+  den.aspects.daniel = {
     includes = [
+        den.provides.unfree
       den.provides.primary-user
       (den.provides.user-shell "fish")
     ];
