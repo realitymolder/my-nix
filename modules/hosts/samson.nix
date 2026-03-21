@@ -4,6 +4,7 @@
 
   den.aspects.samson = {
     includes = [
+      den.aspects.daniel
       den.provides.dev
       den.provides.system
       den.provides.gaming
