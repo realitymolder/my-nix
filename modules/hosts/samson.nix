@@ -1,7 +1,9 @@
 { inputs, den, ... }:
 {
-    flake-file.inputs.opencode.url = "github:NixOS/nixos-hardware";
-
+  flake-file.inputs.disko = {
+    url = "github:nix-community/disko";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   den.hosts.x86_64-linux.samson.users.daniel = { };
 
@@ -18,21 +20,40 @@
     nixos =
       { pkgs, lib, ... }:
       {
-        
+
         imports = [
+          inputs.disko.nixosModules.disko
           inputs.nixos-hardware.nixosModules.common-cpu-amd
           inputs.nixos-hardware.nixosModules.common-gpu-amd
         ];
 
-        # File systems based on nixos-generate-config output
-        fileSystems."/boot" = {
-          device = "/dev/disk/by-uuid/XXX"; # Replace with actual UUID
-          fsType = "vfat";
-        };
-
-        fileSystems."/" = {
-          device = "/dev/disk/by-uuid/XXX"; # Replace with actual UUID
-          fsType = "ext4";
+        disko.devices = {
+          disk.nvme1n1 = {
+            device = "/dev/nvme1n1";
+            type = "disk";
+            content = {
+              type = "gpt";
+              partitions = {
+                ESP = {
+                  type = "EF00";
+                  size = "1024M";
+                  content = {
+                    type = "filesystem";
+                    format = "vfat";
+                    mountpoint = "/boot";
+                  };
+                };
+                root = {
+                  size = "100%";
+                  content = {
+                    type = "filesystem";
+                    format = "ext4";
+                    mountpoint = "/";
+                  };
+                };
+              };
+            };
+          };
         };
 
         swapDevices = [

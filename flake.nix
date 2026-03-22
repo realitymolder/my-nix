@@ -6,6 +6,10 @@
   inputs = {
     dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
     den.url = "github:vic/den";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-aspects.url = "github:vic/flake-aspects";
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
