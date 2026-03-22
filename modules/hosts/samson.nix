@@ -1,10 +1,13 @@
 { inputs, den, ... }:
 {
-  flake-file.inputs.disko = {
-    url = "github:nix-community/disko";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
 
+  flake-file.inputs = {
+    nixos-hardware.url = "github:NixOS/nixos-hardware/";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
   den.hosts.x86_64-linux.samson.users.daniel = { };
 
   den.aspects.samson = {

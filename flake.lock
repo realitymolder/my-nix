@@ -21,11 +21,11 @@
     },
     "den": {
       "locked": {
-        "lastModified": 1774151059,
-        "narHash": "sha256-bKy6de7PnHUutkoe2izIxg3fnDTJGvdccrKsptUsP98=",
+        "lastModified": 1774153178,
+        "narHash": "sha256-cSLx4AFv+CehXgg4F32OQs1trvvbW0pjJp92ZzGbWLw=",
         "owner": "vic",
         "repo": "den",
-        "rev": "007b02d75ae6a417a8dd1b1d70a4f97bbb05e49e",
+        "rev": "907fdc486a5429b20cddbab2fe3c2ded51386b88",
         "type": "github"
       },
       "original": {
@@ -160,6 +160,21 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1774018263,
+        "narHash": "sha256-HHYEwK1A22aSaxv2ibhMMkKvrDGKGlA/qObG4smrSqc=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "2d4b4717b2534fad5c715968c1cece04a172b365",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1771369470,
@@ -271,6 +286,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-lib": [
           "nixpkgs"
